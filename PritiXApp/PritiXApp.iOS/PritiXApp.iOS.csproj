@@ -115,6 +115,7 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -140,7 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PritiXApp\PritiXApp.csproj">
-      <Project>{26aa66f3-5bad-413d-a49b-c0c58b02822c}</Project>
+      <Project>{010367CE-A788-4437-A2BC-099DD10EC87C}</Project>
       <Name>PritiXApp</Name>
     </ProjectReference>
   </ItemGroup>
