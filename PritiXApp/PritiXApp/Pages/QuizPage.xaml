@@ -6,6 +6,14 @@
 	             <Image x:Name="btnBack" Source="back.png" HeightRequest="40" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
 				 <Label Margin="-40,0,0,0" Text="Quiz" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
 				</StackLayout>
+			<StackLayout BackgroundColor="#D7BDE2" Margin="0" Padding="10" VerticalOptions="FillAndExpand">
+			        <Label Text="Quiz available Online" HorizontalOptions="Center"/>
+				    <ListView x:Name="lstOnlineDict" VerticalOptions="StartAndExpand">
+				    </ListView>
+					<Label x:Name="lstLocalDict" Text="Quiz already attempted" HorizontalOptions="Center"/>
+				    <ListView VerticalOptions="EndAndExpand">
+				    </ListView>
+			    </StackLayout>
 			</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

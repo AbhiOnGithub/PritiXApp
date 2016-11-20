@@ -17,6 +17,7 @@ namespace PritiXApp
 				this.Navigation.PopAsync();
 			};
 			btnBack.GestureRecognizers.Add(tapGestureRecognizer);
+			pickLanguage.SelectedIndex = 0;
 		}
 	}
 }

@@ -12,6 +12,8 @@ namespace PritiXApp
         {
             InitializeComponent();
             viewModel = new LoginViewModel(App.Service);
+			viewModel.Username = "abhishek.msft@outlook.com";
+			viewModel.Password = "abhishek@123";
             BindingContext = viewModel;
             NavigationPage.SetHasNavigationBar(this, false);
             App.LoadImmediately = false;
