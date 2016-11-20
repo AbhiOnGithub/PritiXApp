@@ -5,40 +5,21 @@
              x:Class="PritiXApp.LoginPage">
 
   <ContentPage.Content>
-    <OnPlatform x:TypeArguments="View">
-      <OnPlatform.iOS>
-        <StackLayout VerticalOptions="StartAndExpand" Padding="30">
-          <Image Source="logo" />
-          <Entry StyleId="UserId" Text="{Binding Path=Username}" Placeholder="Username" />
-          <Entry StyleId="PasswordId" Text="{Binding Path=Password}" Placeholder="Password" IsPassword="true" />
-          <Grid HorizontalOptions="Center">
-            <Button x:Name="loginButtoniOS" Text="Login" Grid.Row="0" Grid.Column="0"/>
-            <Button x:Name="helpButtoniOS" Text="Help" Grid.Row="0" Grid.Column="1" />
-          </Grid>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="30" BackgroundColor="#7f7fff">
+          <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="30" BackgroundColor="#ffffe5">
+            <Label Text="Sign In" TextColor="Blue" FontSize="20"/>
+            <Entry StyleId="UserId" Text="{Binding Path=Username}" Placeholder="Email" WidthRequest="300" />
+            <Entry StyleId="PasswordId" Text="{Binding Path=Password}" Placeholder="Password" WidthRequest="300" IsPassword="true" />
+            <Button x:Name="loginButton" Text="Login" WidthRequest="100" BackgroundColor="#d8d8d8" />
+          </StackLayout>
+          <StackLayout Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Padding="30" BackgroundColor="#ffffe5">
+            <Label Text="New User Signup" TextColor="Blue" FontSize="20"/>
+            <Entry StyleId="entryUserName" Text="{Binding Path=Username}" Placeholder="Name" WidthRequest="300" />
+            <Entry StyleId="entryUserName" Text="{Binding Path=Username}" Placeholder="Email" WidthRequest="300" />
+            <Entry StyleId="entryPassword" Text="{Binding Path=Password}" Placeholder="Password" WidthRequest="300" IsPassword="true" />
+            <Entry StyleId="entryPasswordAgain" Text="{Binding Path=Password}" Placeholder="Password Again" WidthRequest="300" IsPassword="true" />
+            <Button x:Name="signupButton" Text="Sign Up" WidthRequest="100" BackgroundColor="#d8d8d8" />
+          </StackLayout>
         </StackLayout>
-      </OnPlatform.iOS>
-      <OnPlatform.Android>
-        <StackLayout VerticalOptions="Center" Padding="30">
-          <Grid HorizontalOptions="Center">
-            <Image Source="logo" Grid.Row="0" Grid.Column="0" />
-            <Button x:Name="helpButtonAndroid" Text="Help" Grid.Row="0" Grid.Column="1" />
-          </Grid>
-          <Entry StyleId="UserId" Text="{Binding Path=Username}" Placeholder="Username" />
-          <Entry StyleId="PasswordId" Text="{Binding Path=Password}" Placeholder="Password" IsPassword="true" />
-          <Button x:Name="loginButtonAndroid" Text="Login" />
-        </StackLayout>
-      </OnPlatform.Android>
-      <OnPlatform.WinPhone>
-        <StackLayout VerticalOptions="Center" Padding="30">
-          <Grid HorizontalOptions="Center">
-            <Image Source="logo.png" Grid.Row="0" Grid.Column="0" />
-            <Button x:Name="helpButtonWinPhone" Text="Help" Grid.Row="0" Grid.Column="1" />
-          </Grid>
-          <Entry StyleId="UserId" Text="{Binding Path=Username}" Placeholder="Username" />
-          <Entry StyleId="PassId" Text="{Binding Path=Password}" Placeholder="Password" IsPassword="true" />
-          <Button x:Name="loginButtonWinPhone" Text="Login" />
-        </StackLayout>
-      </OnPlatform.WinPhone>
-    </OnPlatform>
   </ContentPage.Content> 
 </ContentPage>

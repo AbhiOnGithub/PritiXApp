@@ -22,8 +22,7 @@ namespace PritiXApp
             base.OnAppearing();
             string platformName = Device.OS.ToString();
 
-            Content.FindByName<Button>("loginButton" + platformName).Clicked += OnLoginClicked;
-            Content.FindByName<Button>("helpButton" + platformName).Clicked += OnHelpClicked;
+            loginButton.Clicked += OnLoginClicked;
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
@@ -47,11 +46,6 @@ namespace PritiXApp
             {
                 await DisplayAlert("Error", viewModel.ValidationErrors, "OK", "Cancel");
             }
-        }
-        
-        private void OnHelpClicked(object sender, EventArgs e)
-        { 
-            DisplayAlert("Help", "Enter any username and password", "OK", "Cancel");
         }
     }
 }
