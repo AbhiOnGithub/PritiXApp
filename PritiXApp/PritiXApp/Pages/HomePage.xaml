@@ -1,6 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PritiXApp.HomePage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <ContentPage.Content>
+       <StackLayout Orientation="Vertical" Spacing="0">
+           <StackLayout Orientation="Horizontal" Margin="0" HeightRequest="60" BackgroundColor="#5B2C6F">
+             <Label Text="Home" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
+			</StackLayout>
+		    <StackLayout Spacing="50" BackgroundColor="#D7BDE2" Margin="0" Padding="0,50,0,0" VerticalOptions="FillAndExpand">
+			   <Button BorderRadius="5" WidthRequest="200" HeightRequest="100"
+					BackgroundColor="#9B59B6" Text="Dictionaries"
+					FontSize="30" TextColor="White" Clicked="OnDictionariesClicked"
+					HorizontalOptions="CenterAndExpand"/>
+				<Button BorderRadius="5" WidthRequest="200" HeightRequest="100"
+					BackgroundColor="#9B59B6" Text="Quiz" Clicked="OnQuizClicked"
+					FontSize="30" TextColor="White"  
+					HorizontalOptions="CenterAndExpand" />
+				<Button BorderRadius="5" WidthRequest="100" Margin="0,100,0,0" HeightRequest="40"
+					BackgroundColor="#9B59B6" Text="Settings" Clicked="OnSettingsClicked"
+					FontSize="20" TextColor="White"  
+					HorizontalOptions="CenterAndExpand" />
+		   </StackLayout>
+	   </StackLayout>
+	</ContentPage.Content>
 </ContentPage>
