@@ -34,6 +34,11 @@ namespace PritiXDataAccess.Repositories
             return list;
         }
 
+        public Task<IEnumerable<IWord>> GetAllWordsOfDictionary(int dictId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> UpdateWord(IWord word)
         {
             throw new NotImplementedException();

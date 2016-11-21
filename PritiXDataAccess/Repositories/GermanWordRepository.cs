@@ -17,6 +17,11 @@ namespace PritiXDataAccess.Repositories
             _connectionFactory = connectionFactory;
         }
 
+        public Task<IEnumerable<IWord>> GetAllWordsOfDictionary(int dictId)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<bool> AddWord(IWord word)
         {
             throw new NotImplementedException();

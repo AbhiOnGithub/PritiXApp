@@ -28,6 +28,18 @@ namespace PritiXAPI.Controllers
             return Ok(resultData);
         }
 
+        [HttpGet]
+        //[BasicAuthentication(RequireSsl = false)]
+        public async Task<IHttpActionResult> GetAllEnglishWordsOfDictionary(int id)
+        {
+            var resultData = await _englishWordRepository.GetAllWordsOfDictionary(id);
+            if (resultData == null)
+            {
+                return NotFound();
+            }
+            return Ok(resultData);
+        }
+
         [HttpPost]
         public async Task<IHttpActionResult> AddEnglishWord(EnglishWord word)
         {

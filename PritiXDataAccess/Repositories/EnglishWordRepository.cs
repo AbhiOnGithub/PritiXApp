@@ -38,6 +38,15 @@ namespace PritiXDataAccess.Repositories
             return list;
         }
 
+        public async Task<IEnumerable<IWord>> GetAllWordsOfDictionary(int dictId)
+        {
+            var param = new DynamicParameters();
+            param.Add("@DictId", dictId);
+            var list = await SqlMapper.QueryAsync<EnglishWord>
+                (_connectionFactory.GetConnection, "usp_GetAllEnglishWordsOfDict", param, commandType: CommandType.StoredProcedure);
+            return list;
+        }
+
         public async Task<bool> UpdateWord(IWord word)
         {
             throw new NotImplementedException();

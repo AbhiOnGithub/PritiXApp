@@ -8,6 +8,8 @@ namespace PritiXDataAccess.Repositories
     {
         Task<IEnumerable<IWord>> GetAllWords();
 
+        Task<IEnumerable<IWord>> GetAllWordsOfDictionary(int dictId);
+
         Task<bool> AddWord(IWord word);
 
         Task<bool> DeleteWord(int Id);
