@@ -108,7 +108,10 @@
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\back.png" />
     <Content Include="Assets\exit.png" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\exit.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
