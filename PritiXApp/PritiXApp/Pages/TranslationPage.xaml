@@ -9,19 +9,19 @@
 				<StackLayout Spacing="10" Padding="10" BackgroundColor="#D7BDE2" Margin="0" VerticalOptions="FillAndExpand">
 
 				   <Label Text="English"  TextColor="Black" FontSize="40" />
-				   <Label x:Name="EWord" TextColor="Green" Text="E" FontSize="30" />
+				   <Label x:Name="EWord" TextColor="Green" Text="" FontSize="30" />
 
 					<BoxView HeightRequest="2" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand"/>
 				   <Label Text="Dutch"  TextColor="Black" FontSize="40" />
-				   <Label x:Name="DWord" TextColor="Green" Text="E" FontSize="30" />
+				   <Label x:Name="DWord" TextColor="Green" Text="" FontSize="30" />
 				   <BoxView HeightRequest="2" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand"/>
 				
 					<Label Text="French"  TextColor="Black" FontSize="40" />
-				   <Label x:Name="FWord" TextColor="Green" Text="E" FontSize="30" />
+				   <Label x:Name="FWord" TextColor="Green" Text="" FontSize="30" />
 				   <BoxView HeightRequest="2" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand"/>
 				
 					<Label Text="German"  TextColor="Black" FontSize="40" />
-				   <Label x:Name="GWord" TextColor="Green" Text="E" FontSize="30" />
+				   <Label x:Name="GWord" TextColor="Green" Text="" FontSize="30" />
 				   <BoxView HeightRequest="2" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand"/>
 				
 			</StackLayout>
