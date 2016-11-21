@@ -16,7 +16,6 @@ namespace PritiXApp
                 return _instance;
             }
         }
-
         public static IRestService Service { get; set; }
         public static DateTime LastUseTime { get; set; }
         public static User CurrentUser { get; set; }

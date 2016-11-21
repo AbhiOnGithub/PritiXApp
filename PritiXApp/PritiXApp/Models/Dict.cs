@@ -1,5 +1,8 @@
 ﻿namespace PritiXApp.Models
 {
+	/// <summary>
+	/// Dictionary Class.
+	/// </summary>
 	public class Dict
 	{
 		public int Id

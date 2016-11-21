@@ -11,7 +11,9 @@ namespace PritiXApp
 		private IRestService _restService;
 		private IList<EnglishWord> _dictionaries;
 
-
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:PritiXApp.DictionaryItemsPage"/> class.
+		/// </summary>
 		public DictionaryItemsPage()
 		{
 			InitializeComponent();

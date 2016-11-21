@@ -14,6 +14,11 @@ namespace PritiXApp.Services
     {
         HttpClient client;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:PritiXApp.Services.RestService"/> class.
+		/// </summary>
+		/// <param name="username">Username.</param>
+		/// <param name="password">Password.</param>
         public RestService(string username, string password)
         {
             var authData = string.Format("{0}:{1}", username, password);
