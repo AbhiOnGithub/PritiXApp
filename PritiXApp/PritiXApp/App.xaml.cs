@@ -21,6 +21,8 @@ namespace PritiXApp
         public static DateTime LastUseTime { get; set; }
         public static User CurrentUser { get; set; }
         public static bool LoadImmediately { get; set; }
+		public static string Pass { get; set; } 
+		public static Dict CurrentDict { get; set; }
         public App()
         {
             InitializeComponent();

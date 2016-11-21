@@ -8,7 +8,12 @@
 				</StackLayout>
 			    <StackLayout BackgroundColor="#D7BDE2" Margin="0" Padding="10" VerticalOptions="FillAndExpand">
 			        <Label Text="Dictionaries available Online" HorizontalOptions="Center"/>
-				    <ListView x:Name="lstOnlineDict" VerticalOptions="StartAndExpand">
+				    <ListView x:Name="lstOnlineDict" VerticalOptions="StartAndExpand" ItemSelected="Handle_ItemSelected">
+						<ListView.ItemTemplate>
+						   <DataTemplate>
+						        <TextCell Text="{Binding Name}" />
+						   </DataTemplate>
+						</ListView.ItemTemplate>
 				    </ListView>
 					<Label x:Name="lstLocalDict" Text="Dictionaries available Locally" HorizontalOptions="Center"/>
 				    <ListView VerticalOptions="EndAndExpand">

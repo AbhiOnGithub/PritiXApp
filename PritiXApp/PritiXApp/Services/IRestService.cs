@@ -11,6 +11,7 @@ namespace PritiXApp.Services
     public interface IRestService : IDisposable
     {
         Task<User> LoginAsync(Credentials credentails);
-        Task<IList<IWord>> GetListOfWords(Consts.Languages lang);
+        Task<IList<EnglishWord>> GetListOfWords();
+		Task<IList<Dict>> GetListOfDictionaries();
     }
 }

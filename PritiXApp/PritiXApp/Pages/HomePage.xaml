@@ -16,7 +16,7 @@
 					BackgroundColor="#9B59B6" Text="Quiz" Clicked="OnQuizClicked"
 					FontSize="30" TextColor="White"  
 					HorizontalOptions="FillAndExpand" />
-				<Button BorderRadius="5" WidthRequest="100" Margin="0,0,0,0" HeightRequest="40"
+				<Button BorderRadius="5" WidthRequest="120" Margin="0,0,0,0" HeightRequest="40"
 					BackgroundColor="#9B59B6" Text="Settings" Clicked="OnSettingsClicked"
 					FontSize="20" TextColor="White"  VerticalOptions="EndAndExpand"
 					HorizontalOptions="CenterAndExpand" />

@@ -6,13 +6,13 @@ using Xamarin.Forms;
 
 namespace PritiXApp
 {
-	public partial class DictionariesPage : ContentPage
+	public partial class DictionaryItemsPage : ContentPage
 	{
 		private IRestService _restService;
-		private IList<Dict> _dictionaries; 
+		private IList<EnglishWord> _dictionaries;
 
 
-		public DictionariesPage()
+		public DictionaryItemsPage()
 		{
 			InitializeComponent();
 			NavigationPage.SetHasNavigationBar(this, false);
@@ -23,6 +23,7 @@ namespace PritiXApp
 			};
 			btnBack.GestureRecognizers.Add(tapGestureRecognizer);
 			_restService = new RestService(App.CurrentUser.Email, App.Pass);
+			lbl.Text = App.CurrentDict.Name;
 		}
 
 		protected override void OnAppearing()
@@ -32,14 +33,13 @@ namespace PritiXApp
 
 		private async void GetData()
 		{
-			_dictionaries = await _restService.GetListOfDictionaries();
-			lstOnlineDict.ItemsSource = _dictionaries;
+			_dictionaries = await _restService.GetListOfWords();
+			lstWords.ItemsSource = _dictionaries;
 		}
 
 		void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
-			App.CurrentDict = e.SelectedItem as Dict;
-			Navigation.PushAsync(new DictionaryItemsPage());	
+
 		}
 	}
 }

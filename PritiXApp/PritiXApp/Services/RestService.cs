@@ -21,7 +21,7 @@ namespace PritiXApp.Services
 
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authHeaderValue);
         }
 
         public RestService()
@@ -33,10 +33,45 @@ namespace PritiXApp.Services
         {
         }
 
-        public Task<IList<IWord>> GetListOfWords(Consts.Languages lang)
+        public async Task<IList<EnglishWord>> GetListOfWords()
         {
-            throw new NotImplementedException();
+            var uri = new Uri(string.Format(Consts.RestUrl + "EnglishWords/", String.Empty));
+			try
+			{
+				HttpResponseMessage response = null;
+				response = client.GetAsync(uri).GetAwaiter().GetResult();
+				if (response.IsSuccessStatusCode)
+				{
+					var dicts = await response.Content.ReadAsStringAsync();
+					return JsonConvert.DeserializeObject<List<EnglishWord>>(dicts);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(@"				ERROR {0}", ex.Message);
+			}
+			return null;
         }
+
+		public async Task<IList<Dict>> GetListOfDictionaries()
+		{
+			var uri = new Uri(string.Format(Consts.RestUrl + "Dictionary/", String.Empty));
+			try
+			{
+				HttpResponseMessage response = null;
+				response =  client.GetAsync(uri).GetAwaiter().GetResult();
+				if (response.IsSuccessStatusCode)
+				{
+					var dicts = await response.Content.ReadAsStringAsync();
+					return JsonConvert.DeserializeObject<List<Dict>>(dicts);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(@"				ERROR {0}", ex.Message);
+			}
+			return null;
+		}
 
         //public Task<IList<IWord>> GetListOfWords(Consts.Languages lang, CancellationToken cancellationToken)
         //{

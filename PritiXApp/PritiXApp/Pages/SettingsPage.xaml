@@ -21,7 +21,7 @@
 				        <StackLayout Orientation="Horizontal" Spacing="0">
 					        <Label VerticalOptions="CenterAndExpand" FontSize="18" TextColor="Gray" Text="Change Password" HorizontalOptions="Center"/>
 					        <Entry Placeholder="Current Password" WidthRequest="155" Margin="0,0,-10,0" IsPassword="true" HorizontalOptions="EndAndExpand" />
-					        <Button Text="Ok" BackgroundColor="Purple" TextColor="White" WidthRequest="40" HorizontalOptions="EndAndExpand" />
+					        <Button Text="Ok" BackgroundColor="Purple" TextColor="White" WidthRequest="45" HorizontalOptions="EndAndExpand" />
 						</StackLayout>
 				        <BoxView HorizontalOptions="Fill" HeightRequest="2" BackgroundColor="Purple" />
 				        <StackLayout Orientation="Horizontal" Spacing="0">
