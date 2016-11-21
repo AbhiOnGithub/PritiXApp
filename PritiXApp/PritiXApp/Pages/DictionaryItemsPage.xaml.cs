@@ -30,18 +30,21 @@ namespace PritiXApp
 
 		protected override void OnAppearing()
 		{
-			GetData();
+			if(_dictionaries == null)
+				GetData();
 		}
 
 		private async void GetData()
 		{
-			_dictionaries = await _restService.GetListOfWords();
+			await DisplayAlert("Loading Words", "Please wait...", "Ok", "Cancel");
+			_dictionaries = await _restService.GetListOfWords(App.CurrentDict.Id);
 			lstWords.ItemsSource = _dictionaries;
 		}
 
 		void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
-
+			App.word = lstWords.SelectedItem as EnglishWord;
+			Navigation.PushAsync(new TranslationPage());
 		}
 	}
 }

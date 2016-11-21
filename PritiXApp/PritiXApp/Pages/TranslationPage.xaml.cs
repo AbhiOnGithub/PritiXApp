@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using PritiXApp.Models;
 using PritiXApp.Services;
 using Xamarin.Forms;
 
 namespace PritiXApp
 {
-	public partial class DictionariesPage : ContentPage
+	public partial class TranslationPage : ContentPage
 	{
 		private IRestService _restService;
-		private IList<Dict> _dictionaries; 
 
-
-		public DictionariesPage()
+		public TranslationPage()
 		{
 			InitializeComponent();
 			NavigationPage.SetHasNavigationBar(this, false);
@@ -23,6 +20,7 @@ namespace PritiXApp
 			};
 			btnBack.GestureRecognizers.Add(tapGestureRecognizer);
 			_restService = new RestService(App.CurrentUser.Email, App.Pass);
+			EWord.Text = App.word.Word;
 		}
 
 		protected override void OnAppearing()
@@ -30,20 +28,17 @@ namespace PritiXApp
 			GetData();
 		}
 
+
 		private async void GetData()
 		{
-			if (_dictionaries == null)
+			await DisplayAlert("Loading Translations", "Please wait...", "Ok", "Cancel");
+			var data = await _restService.GetTranslation(App.word.Index);
+			if (data != null)
 			{
-				await DisplayAlert("Loading Dictionaries", "Please wait...", "Ok", "Cancel");
-				_dictionaries = await _restService.GetListOfDictionaries();
-				lstOnlineDict.ItemsSource = _dictionaries;
+				FWord.Text = data.FWord;
+				DWord.Text = data.DWord;
+				GWord.Text = data.GWord;
 			}
-		}
-
-		void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-		{
-			App.CurrentDict = e.SelectedItem as Dict;
-			Navigation.PushAsync(new DictionaryItemsPage());	
 		}
 	}
 }

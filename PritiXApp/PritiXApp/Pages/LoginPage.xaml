@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:PritiXApp"
              x:Class="PritiXApp.LoginPage">
-
   <ContentPage.Content>
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="30" BackgroundColor="#7f7fff">
           <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="30" BackgroundColor="#ffffe5">
@@ -14,10 +13,10 @@
           </StackLayout>
           <StackLayout Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Padding="30" BackgroundColor="#ffffe5">
             <Label Text="New User Signup" TextColor="Blue" FontSize="20"/>
-            <Entry StyleId="entryUserName" Text="{Binding Path=Username}" Placeholder="Name" WidthRequest="300" />
-            <Entry StyleId="entryUserName" Text="{Binding Path=Username}" Placeholder="Email" WidthRequest="300" />
-            <Entry StyleId="entryPassword" Text="{Binding Path=Password}" Placeholder="Password" WidthRequest="300" IsPassword="true" />
-            <Entry StyleId="entryPasswordAgain" Text="{Binding Path=Password}" Placeholder="Password Again" WidthRequest="300" IsPassword="true" />
+            <Entry  x:Name="etName" StyleId="entryUserName"  Placeholder="Name" WidthRequest="300" />
+            <Entry x:Name="etUserName" StyleId="entryUserName"  Placeholder="Email" WidthRequest="300" />
+            <Entry x:Name="etPass" StyleId="entryPassword"  Placeholder="Password" WidthRequest="300" IsPassword="true" />
+            <Entry x:Name="etRePass" StyleId="entryPasswordAgain"  Placeholder="Re-Enter Password" WidthRequest="300" IsPassword="true" />
             <Button x:Name="signupButton" Text="Sign Up" WidthRequest="100" BackgroundColor="#d8d8d8" />
           </StackLayout>
         </StackLayout>

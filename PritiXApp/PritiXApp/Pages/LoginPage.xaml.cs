@@ -1,6 +1,8 @@
 ﻿using PritiXApp.ViewModels;
 using System;
 using Xamarin.Forms;
+using PritiXApp.Services;
+using PritiXApp.Models;
 
 namespace PritiXApp
 {
@@ -19,13 +21,58 @@ namespace PritiXApp
             App.LoadImmediately = false;
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
-            base.OnAppearing();
-            string platformName = Device.OS.ToString();
+			if (App.IsClosed)
+			{
+				await Navigation.PopAsync();
+				return;
+			}
 
             loginButton.Clicked += OnLoginClicked;
+			signupButton.Clicked += OnSignupClickd;
         }
+
+		private async void OnSignupClickd(object sender, EventArgs e)
+		{
+			if (String.IsNullOrEmpty(etName.Text) || String.IsNullOrEmpty(etUserName.Text) ||
+				String.IsNullOrEmpty(etPass.Text) || string.IsNullOrEmpty(etRePass.Text))
+			{
+				await DisplayAlert($"Error", "Please enter all Details", "Ok", "Cancel");
+				return;
+			}
+
+			if (etPass.Text != etRePass.Text)
+			{
+				await DisplayAlert($"Error", "Passwords mismatched", "Ok", "Cancel");
+				return;
+			}
+
+			var restService = new RestService();
+			var result = await restService.SignupAsync(new Newuser()
+			{
+				Fullname = etName.Text,
+				Username = etUserName.Text.ToLower(),
+				Password = etPass.Text
+			});
+
+			var res = await restService.LoginAsync(new Credentials(etUserName.Text.ToLower(), etPass.Text));
+			if (res == null)
+				await DisplayAlert($"Sign Up Unsuccessful", "Email already registered !!", "Ok", "Cancel");
+			else
+			{
+				App.LastUseTime = DateTime.UtcNow;
+				App.LoadImmediately = true;
+				App.Pass = etPass.Text;
+				App.CurrentUser = res;
+				etPass.Text = etUserName.Text = etRePass.Text = etName.Text = String.Empty;
+				await DisplayAlert($"Signed Up Successfully", "Preparaing your data !!", "Ok", "Cancel");
+				App.LoadImmediately = true;
+				await this.Navigation.PopAsync();
+			}
+
+		}
+				                                                                                                                          
 
         private async void OnLoginClicked(object sender, EventArgs e)
         {
@@ -35,7 +82,7 @@ namespace PritiXApp
                 {
                     App.LastUseTime = DateTime.UtcNow;
                     App.LoadImmediately = true;
-                    await DisplayAlert($"Welcome {viewModel.UserLoggedIn.FullName}","Please wait , while we are loading your Dictioanaries" , "Ok", "Cancel");
+                    await DisplayAlert($"Welcome {viewModel.UserLoggedIn.FullName}","Loading data.." , "Ok", "Cancel");
                     App.LoadImmediately = true;
                     await this.Navigation.PopAsync();
                 }

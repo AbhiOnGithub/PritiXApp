@@ -4,7 +4,7 @@
 	       <StackLayout Orientation="Vertical" Spacing="0">
 	           <StackLayout Orientation="Horizontal" Margin="0" HeightRequest="70" Padding="0,10,0,0" BackgroundColor="#5B2C6F">
 	             <Image x:Name="btnBack" Source="back.png" HeightRequest="40" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
-				 <Label Margin="-40,0,0,0" Text="Quiz" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
+				 <Label Margin="-40,0,0,0" Text="Quiz(Not Done)" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
 				</StackLayout>
 			<StackLayout BackgroundColor="#D7BDE2" Margin="0" Padding="10" VerticalOptions="FillAndExpand">
 			        <Label Text="Quiz available Online" HorizontalOptions="Center"/>

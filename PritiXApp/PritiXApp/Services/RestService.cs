@@ -21,8 +21,8 @@ namespace PritiXApp.Services
 		/// <param name="password">Password.</param>
         public RestService(string username, string password)
         {
-            var authData = string.Format("{0}:{1}", username, password);
-            var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
+            //var authData = string.Format("{0}:{1}", username, password);
+            //var authHeaderValue = Convert.ToBase64String(Encoding.UTF8.GetBytes(authData));
 
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
@@ -38,9 +38,9 @@ namespace PritiXApp.Services
         {
         }
 
-        public async Task<IList<EnglishWord>> GetListOfWords()
+        public async Task<IList<EnglishWord>> GetListOfWords(int dictId)
         {
-            var uri = new Uri(string.Format(Consts.RestUrl + "EnglishWords/", String.Empty));
+			var uri = new Uri(string.Format(Consts.RestUrl + $"EnglishWords/{dictId}", String.Empty));
 			try
 			{
 				HttpResponseMessage response = null;
@@ -78,11 +78,54 @@ namespace PritiXApp.Services
 			return null;
 		}
 
-        //public Task<IList<IWord>> GetListOfWords(Consts.Languages lang, CancellationToken cancellationToken)
-        //{
-        //    Words = new List<IWord>();
-        //    return Words;
-        //}
+		//public Task<IList<IWord>> GetListOfWords(Consts.Languages lang, CancellationToken cancellationToken)
+		//{
+		//    Words = new List<IWord>();
+		//    return Words;
+		//}
+
+		public async Task<bool> SignupAsync(Newuser user)
+		{
+			var uri = new Uri(string.Format(Consts.RestUrl + "Signup/", String.Empty));
+			try
+			{
+				var json = JsonConvert.SerializeObject(user);
+				var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+				HttpResponseMessage response = null;
+				response = client.PostAsync(uri, content).GetAwaiter().GetResult();
+				if (response.IsSuccessStatusCode)
+				{
+					var userString = await response.Content.ReadAsStringAsync();
+					return JsonConvert.DeserializeObject<bool>(userString);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(@"				ERROR {0}", ex.Message);
+			}
+			return false;
+		}
+
+		public async Task<Translation> GetTranslation(int index)
+		{
+			var uri = new Uri(string.Format(Consts.RestUrl + $"Translations/?idx={index}", String.Empty));
+			try
+			{
+				HttpResponseMessage response = null;
+				response = client.GetAsync(uri).GetAwaiter().GetResult();
+				if (response.IsSuccessStatusCode)
+				{
+					var dicts = await response.Content.ReadAsStringAsync();
+					return JsonConvert.DeserializeObject<Translation>(dicts);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(@"				ERROR {0}", ex.Message);
+			}
+			return null;
+		}
 
         public async Task<User> LoginAsync(Credentials credentials)
         {

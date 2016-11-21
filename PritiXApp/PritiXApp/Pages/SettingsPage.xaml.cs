@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PritiXApp
@@ -10,6 +10,8 @@ namespace PritiXApp
 		public SettingsPage()
 		{
 			InitializeComponent();
+
+			//LoadData();
 			NavigationPage.SetHasNavigationBar(this, false);
 			var tapGestureRecognizer = new TapGestureRecognizer();
 			tapGestureRecognizer.Tapped += (s, e) =>
@@ -18,6 +20,8 @@ namespace PritiXApp
 			};
 			btnBack.GestureRecognizers.Add(tapGestureRecognizer);
 			pickLanguage.SelectedIndex = 0;
+
+
 		}
 	}
 }

@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PritiXApp.SplashPage" BackgroundColor="#5B2C6F">
   <ContentPage.Content>
-    <StackLayout VerticalOptions="Center">
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
       <Label Text="PritiX App" TextColor="Yellow" FontSize="30" VerticalOptions="Center" HorizontalOptions="Center" />
-      <Image Source="exit.png" Margin="0,250,0,0" HeightRequest="40" WidthRequest="40" HorizontalOptions="Center" />
-	  <Label Text="Exit" TextColor="Red" FontSize="16" HorizontalOptions="Center" />
+      <Button BackgroundColor="Silver" Text="Login" VerticalOptions="End" TextColor="Yellow" IsVisible="false" x:Name="btnLogin" FontSize="18" />
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

@@ -17,6 +17,14 @@ namespace PritiXApp
             NavigationPage.SetHasNavigationBar(this, false);
             App.LoadImmediately = false;
 
+			var tapGestureRecognizer = new TapGestureRecognizer();
+			tapGestureRecognizer.Tapped += (s, e) =>
+			{
+				App.IsClosed = true;
+				this.Navigation.PopAsync();
+			};
+			btnBack.GestureRecognizers.Add(tapGestureRecognizer);
+
         }
 
 		public async void OnDictionariesClicked(object sender, EventArgs e)

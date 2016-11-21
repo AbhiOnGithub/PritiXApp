@@ -75,6 +75,11 @@
     <Compile Include="Pages\DictionaryItemsPage.xaml.cs">
       <DependentUpon>DictionaryItemsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Newuser.cs" />
+    <Compile Include="Pages\TranslationPage.xaml.cs">
+      <DependentUpon>TranslationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Translation.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\LoginPage.xaml">
@@ -95,6 +100,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\DictionaryItemsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\TranslationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

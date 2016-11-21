@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace PritiXApp
@@ -10,6 +10,9 @@ namespace PritiXApp
 		public QuizPage()
 		{
 			InitializeComponent();
+
+			//LoadData();
+
 			NavigationPage.SetHasNavigationBar(this, false);
 			var tapGestureRecognizer = new TapGestureRecognizer();
 			tapGestureRecognizer.Tapped += (s, e) =>
@@ -17,6 +20,8 @@ namespace PritiXApp
 				this.Navigation.PopAsync();
 			};
 			btnBack.GestureRecognizers.Add(tapGestureRecognizer);
+
+
 		}
 	}
 }

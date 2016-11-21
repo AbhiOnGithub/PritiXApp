@@ -4,9 +4,10 @@
              x:Class="PritiXApp.HomePage">
     <ContentPage.Content>
        <StackLayout Orientation="Vertical" Spacing="0">
-           <StackLayout Orientation="Horizontal" Margin="0" HeightRequest="60" BackgroundColor="#5B2C6F">
-             <Label Text="Home" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
-			</StackLayout>
+           <StackLayout Orientation="Horizontal" Margin="0" HeightRequest="70" Padding="0,10,0,0" BackgroundColor="#5B2C6F">
+	             <Image x:Name="btnBack" Source="back.png" HeightRequest="40" WidthRequest="40" HorizontalOptions="Start" VerticalOptions="Center"/>
+				 <Label Margin="-40,0,0,0" Text="Home" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" />
+				</StackLayout>
 		    <StackLayout Spacing="50" BackgroundColor="#D7BDE2" Margin="0" Padding="20,50,20,20" VerticalOptions="FillAndExpand">
 			   <Button BorderRadius="5" WidthRequest="200" HeightRequest="100"
 					BackgroundColor="#9B59B6" Text="Dictionaries"
@@ -16,6 +17,7 @@
 					BackgroundColor="#9B59B6" Text="Quiz" Clicked="OnQuizClicked"
 					FontSize="30" TextColor="White"  
 					HorizontalOptions="FillAndExpand" />
+				
 				<Button BorderRadius="5" WidthRequest="120" Margin="0,0,0,0" HeightRequest="40"
 					BackgroundColor="#9B59B6" Text="Settings" Clicked="OnSettingsClicked"
 					FontSize="20" TextColor="White"  VerticalOptions="EndAndExpand"

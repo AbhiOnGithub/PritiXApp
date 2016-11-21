@@ -43,7 +43,7 @@ namespace PritiXApp.ViewModels
         public async Task<bool> LoginAsync()
         {
             IsBusy = true;
-            this.UserLoggedIn = await service.LoginAsync(new Credentials(Username,Password));
+			this.UserLoggedIn = await service.LoginAsync(new Credentials(Username.ToLower(),Password));
 			App.Pass = Password;
             App.CurrentUser = UserLoggedIn;
             IsBusy = false;

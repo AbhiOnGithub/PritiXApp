@@ -22,6 +22,9 @@ namespace PritiXApp
         public static bool LoadImmediately { get; set; }
 		public static string Pass { get; set; } 
 		public static Dict CurrentDict { get; set; }
+		public static bool IsClosed { get; set; }
+		public static EnglishWord word { get; set; }
+
         public App()
         {
             InitializeComponent();
