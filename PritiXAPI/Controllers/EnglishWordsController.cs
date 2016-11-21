@@ -17,7 +17,7 @@ namespace PritiXAPI.Controllers
         }
 
         [HttpGet]
-        [BasicAuthentication(RequireSsl = false)]
+        //[BasicAuthentication(RequireSsl = false)]
         public async Task<IHttpActionResult> GetAllEnglishWords()
         {
             var resultData = await _englishWordRepository.GetAllWords();
@@ -28,6 +28,7 @@ namespace PritiXAPI.Controllers
             return Ok(resultData);
         }
 
+        [HttpPost]
         public async Task<IHttpActionResult> AddEnglishWord(EnglishWord word)
         {
             var resultData = await _englishWordRepository.AddWord(word);

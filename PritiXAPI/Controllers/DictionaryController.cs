@@ -17,7 +17,7 @@ namespace PritiXAPI.Controllers
         }
 
         [HttpGet]
-        [BasicAuthentication(RequireSsl = false)]
+        //[BasicAuthentication(RequireSsl = false)]
         public async Task<IHttpActionResult> GetAllDictionaries()
         {
             var resultData = await _dictionaryRepository.GetAllDictionaries();
@@ -28,6 +28,7 @@ namespace PritiXAPI.Controllers
             return Ok(resultData);
         }
 
+        [HttpPost]
         public async Task<IHttpActionResult> AddDictionary(Dict dict)
         {
             var resultData = await _dictionaryRepository.AddDictionary(dict);
