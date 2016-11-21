@@ -10,7 +10,7 @@ namespace PritiXAPI.Controllers
     public class EnglishWordsController : BaseApiController
     {
         IWordRepository _englishWordRepository;
-
+        
         public EnglishWordsController()
         {
             _englishWordRepository = new EnglishWordRepository(new ConnectionFactory());

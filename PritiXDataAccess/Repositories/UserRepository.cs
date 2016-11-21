@@ -16,6 +16,18 @@ namespace PritiXDataAccess.Repositories
             _connectionFactory = connectionFactory;
         }
 
+        public async Task<bool> SignupNewUser(string username, string password, string fullname)
+        {
+            var param = new DynamicParameters();
+            param.Add("@Username", username);
+            param.Add("@Password", password);
+            param.Add("@Fullname", fullname);
+            var result = await SqlMapper.ExecuteAsync(_connectionFactory.GetConnection, "usp_AddNewUser", param, commandType: CommandType.StoredProcedure);
+
+            return result == 1 ? true : false;
+        }
+
+
         public async Task<User> GetUserLoggedIn(string username, string password)
         {
             var param = new DynamicParameters();

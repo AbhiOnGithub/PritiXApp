@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace PritiXDataAccess.Repositories
 {
-    public interface IUserRepository
+    public interface ITranslateRepository
     {
-        Task<User> GetUserLoggedIn(string username,string password);
-
-        Task<bool> SignupNewUser(string username, string password, string fullname);
+        Task<Translation> TranslateWords(int index);
     }
 }

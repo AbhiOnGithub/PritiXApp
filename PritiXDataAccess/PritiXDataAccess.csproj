@@ -52,6 +52,7 @@
     <Compile Include="Entities\FrenchWord.cs" />
     <Compile Include="Entities\GermanWord.cs" />
     <Compile Include="Entities\IWord.cs" />
+    <Compile Include="Entities\Translation.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\WordDictionary.cs" />
     <Compile Include="Infrastructure\ConnectionFactory.cs" />
@@ -63,9 +64,11 @@
     <Compile Include="Repositories\DutchWordRepository.cs" />
     <Compile Include="Repositories\EnglishWordRepository.cs" />
     <Compile Include="Repositories\IDictRepository.cs" />
+    <Compile Include="Repositories\ITranslateRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\IWordDictionaryItemRepository.cs" />
     <Compile Include="Repositories\IWordRepository.cs" />
+    <Compile Include="Repositories\TranslateRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\WordDictionaryItemRepository.cs" />
   </ItemGroup>
