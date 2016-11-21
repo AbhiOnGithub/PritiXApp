@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace PritiXDataAccess.Entities
 {
-    public interface IWord
+    public class Consts
     {
-        int Id { get; set; }
-
-        string Word { get; set; }
-
-        int Index { get; set; }
-
-        Consts.Languages Lang { get; }
-
+        public enum Languages
+        {
+            English,
+            Dutch,
+            French,
+            German
+        }
     }
 }

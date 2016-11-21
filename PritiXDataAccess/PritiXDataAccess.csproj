@@ -45,22 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Consts.cs" />
+    <Compile Include="Entities\Dict.cs" />
     <Compile Include="Entities\DutchWord.cs" />
     <Compile Include="Entities\EnglishWord.cs" />
     <Compile Include="Entities\FrenchWord.cs" />
     <Compile Include="Entities\GermanWord.cs" />
     <Compile Include="Entities\IWord.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\WordDictionary.cs" />
     <Compile Include="Infrastructure\ConnectionFactory.cs" />
     <Compile Include="Infrastructure\IConnectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DictRepository.cs" />
     <Compile Include="Repositories\FrenchWordRepository.cs" />
     <Compile Include="Repositories\GermanWordRepository.cs" />
     <Compile Include="Repositories\DutchWordRepository.cs" />
     <Compile Include="Repositories\EnglishWordRepository.cs" />
+    <Compile Include="Repositories\IDictRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="Repositories\IWordDictionaryItemRepository.cs" />
     <Compile Include="Repositories\IWordRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\WordDictionaryItemRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

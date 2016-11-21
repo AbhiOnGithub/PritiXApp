@@ -199,6 +199,7 @@
     <Compile Include="Attributes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Attributes\BasicAuthenticationIdentity.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\DictionaryController.cs" />
     <Compile Include="Controllers\EnglishWordsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

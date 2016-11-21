@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace PritiXDataAccess.Entities
 {
-    public interface IWord
+    public class Dict
     {
-        int Id { get; set; }
+        public int Id { get; set; }
 
-        string Word { get; set; }
+        public string Name { get; set; }
 
-        int Index { get; set; }
-
-        Consts.Languages Lang { get; }
-
+        public string Purpose { get; set; }
     }
 }

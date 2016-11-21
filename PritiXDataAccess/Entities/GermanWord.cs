@@ -13,5 +13,13 @@ namespace PritiXDataAccess.Entities
         public string Word { get; set; }
 
         public int Index { get; set; }
+
+        public Consts.Languages Lang
+        {
+            get
+            {
+                return Consts.Languages.German;
+            }
+        }
     }
 }
